@@ -1,0 +1,26 @@
+{
+  "overview": "YodhaMedia is a premium digital growth agency website targeting healthcare and business sectors. Features a dual light/dark theme with a deep purple and golden yellow brand palette, glassmorphism navigation, animated service cards, a multi-page content hub with blog filtering and dynamic table of contents, and embedded JSON-LD structured data for SEO authority.",
+  "features": [
+    "Dual-theme system (light/dark) with brand colors and gradient dark background",
+    "Glassmorphism sticky Navbar with theme toggle and mobile menu",
+    "Home page Hero with 'Book Consultation' CTA, Trust Bar, and Services Snapshot",
+    "About page with YodhaMedia Advantage, team cards, and industry expertise blocks",
+    "Services page with animated ServiceCard components and Framer Motion hover effects",
+    "Blog hub with category filtering, search, and 6-8 placeholder articles",
+    "Dynamic blog post page with auto-generated Table of Contents and related posts",
+    "Scroll-triggered fade-in-up animations across all major sections",
+    "JSON-LD ProfessionalService and MedicalBusiness structured data schemas",
+    "Responsive design across all screen sizes"
+  ],
+  "category": "marketing",
+  "tags": [
+    "marketing",
+    "healthcare",
+    "digital-agency",
+    "dark-mode",
+    "seo",
+    "blog",
+    "animations"
+  ],
+  "last_updated": "2026-04-29T07:21:44.686Z"
+}

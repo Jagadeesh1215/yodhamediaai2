@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Geist Sans", sans-serif;
+    --font-body: "Geist Sans", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+    --radius: 0.625rem;
+
+    --background: 0.9745 0.0052 313;
+    --foreground: 0.3 0.0898 259;
+    --card: 0.98 0.0042 313;
+    --card-foreground: 0.3 0.0898 259;
+    --popover: 0.98 0.0042 313;
+    --popover-foreground: 0.3 0.0898 259;
+
+    --primary: 0.3 0.0898 259;
+    --primary-foreground: 0.98 0.0042 313;
+
+    --secondary: 0.85 0.04 259;
+    --secondary-foreground: 0.3 0.0898 259;
+    --muted: 0.92 0.01 313;
+    --muted-foreground: 0.5 0.03 259;
+
+    --accent: 0.77 0.192 56;
+    --accent-foreground: 0.15 0.04 259;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.88 0.01 313;
+    --input: 0.9 0.01 313;
+    --ring: 0.77 0.192 56;
+
+    --chart-1: 0.65 0.22 40;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.83 0.19 84;
+    --chart-5: 0.77 0.19 70;
+
+    --sidebar: 0.98 0.0042 313;
+    --sidebar-foreground: 0.3 0.0898 259;
+    --sidebar-primary: 0.3 0.0898 259;
+    --sidebar-primary-foreground: 0.98 0.0042 313;
+    --sidebar-accent: 0.77 0.192 56;
+    --sidebar-accent-foreground: 0.15 0.04 259;
+    --sidebar-border: 0.88 0.01 313;
+    --sidebar-ring: 0.77 0.192 56;
+  }
+
+  .dark {
+    --background: 0.12 0.0084 255;
+    --foreground: 0.95 0.01 313;
+    --card: 0.16 0.0074 255;
+    --card-foreground: 0.95 0.01 313;
+    --popover: 0.2 0.0084 255;
+    --popover-foreground: 0.95 0.01 313;
+
+    --primary: 0.77 0.192 56;
+    --primary-foreground: 0.12 0.0084 255;
+
+    --secondary: 0.22 0.0126 259;
+    --secondary-foreground: 0.85 0.02 313;
+    --muted: 0.22 0.0084 255;
+    --muted-foreground: 0.55 0.01 313;
+
+    --accent: 0.77 0.192 56;
+    --accent-foreground: 0.12 0.0084 255;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.95 0.01 313;
+
+    --border: 0.24 0.008 255;
+    --input: 0.24 0.008 255;
+    --ring: 0.77 0.192 56;
+
+    --chart-1: 0.49 0.24 264;
+    --chart-2: 0.7 0.17 162;
+    --chart-3: 0.77 0.19 70;
+    --chart-4: 0.63 0.27 304;
+    --chart-5: 0.65 0.25 16;
+
+    --sidebar: 0.16 0.0074 255;
+    --sidebar-foreground: 0.95 0.01 313;
+    --sidebar-primary: 0.77 0.192 56;
+    --sidebar-primary-foreground: 0.12 0.0084 255;
+    --sidebar-accent: 0.22 0.0126 259;
+    --sidebar-accent-foreground: 0.85 0.02 313;
+    --sidebar-border: 0.24 0.008 255;
+    --sidebar-ring: 0.77 0.192 56;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "Geist Sans";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-400-normal.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Sans";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-500-normal.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Sans";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-600-normal.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Sans";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-700-normal.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-navbar {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: oklch(var(--background) / 0.85);
+    border-bottom: 1px solid oklch(var(--border) / 0.2);
+  }
+
+  .accent-glow {
+    @apply ring-2 shadow-lg transition-smooth;
+    --tw-ring-color: oklch(var(--accent) / 0.5);
+    --tw-shadow-color: oklch(var(--accent) / 0.2);
+  }
+
+  .service-card-hover {
+    @apply scale-105 shadow-lg transition-smooth;
+  }
+
+  .gradient-text-primary {
+    @apply bg-gradient-to-r bg-clip-text text-transparent;
+    --tw-gradient-from: oklch(var(--primary));
+    --tw-gradient-to: oklch(var(--accent));
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+
+  .dark-gradient-bg {
+    background: linear-gradient(
+      135deg,
+      oklch(0.3 0.0898 259) 0%,
+      oklch(0.18 0.07 259) 100%
+    );
+  }
+
+  .section-alt {
+    background-color: oklch(var(--muted) / 0.4);
+  }
+
+  .card-border-accent {
+    @apply border transition-smooth;
+    border-color: oklch(var(--border));
+  }
+  .card-border-accent:hover {
+    border-color: oklch(var(--accent) / 0.4);
+  }
+
+  .hero-glow {
+    @apply shadow-2xl;
+    --tw-shadow-color: oklch(var(--accent) / 0.1);
+  }
+}
